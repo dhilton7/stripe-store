@@ -1,2 +1,7 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+.container {
+	padding-bottom: 40px;
+}
+
+.product-img {
+	margin: 16px;
+}
