@@ -1,0 +1,40 @@
+<%= simple_form_for @product do |f| %>
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="form-group">
+				<%= f.input :name,
+							input_html: {
+								class: 'form-control'
+							} 
+				%>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="form-group">
+				<%= f.input :price,
+							input_html: {
+								class: 'form-control'
+							}
+				%>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8">
+			<div class="form-group">
+				<%= f.input :description,
+						as: :text,
+						input_html: {
+							class: 'form-control'
+						} 
+				%>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<%= f.submit "Save Product", class: 'btn btn-primary' %>
+		</div>
+	</div>
+<% end %>
