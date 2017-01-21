@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ProductsController, type: :controller do
+	include Devise::Test::ControllerHelpers
 
 	before :each do 
 		@product = create :product
@@ -28,6 +29,10 @@ RSpec.describe ProductsController, type: :controller do
 	end
 
 	describe "POST create" do 
+		before :each do 
+			sign_in create(:user)
+		end
+
 		it "should create a new product" do 
 			product_count = Product.count
 			post :create, product: attributes_for(:product)
