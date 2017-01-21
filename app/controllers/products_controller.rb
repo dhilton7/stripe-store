@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
 
-	#before_action :set_product, except: [:new, :create, :index]
 	load_and_authorize_resource
 
 	def show
@@ -44,8 +43,4 @@ class ProductsController < ApplicationController
 	def product_params
 		params.require(:product).permit(:name, :description, :price)
 	end
-
-	def set_product
-		@product = Product.find params[:id]
-	end 
 end
