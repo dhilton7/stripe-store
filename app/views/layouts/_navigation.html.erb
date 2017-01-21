@@ -9,12 +9,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "SHOP", root_path, class: 'navbar-brand' %>
+      <%= link_to products_path, class: 'navbar-brand' do %>
+        <%= icon('home', class: 'fa-lg') %>
+      <% end %>
     </div>
 
 		<div class="collapse navbar-collapse" id="navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<% if current_user.present? %>
+          <li>
+            <%= link_to root_path do %>
+              <%= icon('cog', class: 'fa-lg') %>
+            <% end %>
+            </li>
+          </li>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Sign In",  new_user_session_path %></li>
