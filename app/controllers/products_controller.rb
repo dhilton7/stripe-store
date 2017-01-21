@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
-	before_action :set_product, except: [:new, :create, :index]
+	#before_action :set_product, except: [:new, :create, :index]
+	load_and_authorize_resource
 
 	def show
 	end
