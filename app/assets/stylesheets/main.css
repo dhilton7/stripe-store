@@ -5,3 +5,17 @@
 .product-img {
 	margin: 16px;
 }
+
+.product-detail {
+	padding-top: 40px;
+}
+
+.order-detail {
+	width: 65%;
+	margin: auto;
+}
+
+.price {
+	font-size: 2em;
+	padding-bottom: 20px;
+}
