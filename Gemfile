@@ -31,6 +31,7 @@ gem 'font-awesome-sass', '~> 4.7.0'
 gem 'stripe'
 gem 'figaro'
 gem 'omniauth-stripe-connect'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
