@@ -2,8 +2,10 @@
 	<div class="col-lg-12">
 		<div class="page-header">
 			<div class="single-line-title">
-				<h1>Products</h1>
-				<%= link_to "Sell New Item", new_product_path, class: 'btn btn-primary' %>
+				<h1>Browse All Products</h1>
+				<% if can? :create, Product %>
+					<%= link_to "Sell New Item", new_product_path, class: 'btn btn-primary' %>
+				<% end %>
 			</div>
 		</div>
 	</div>

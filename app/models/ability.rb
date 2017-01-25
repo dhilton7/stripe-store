@@ -4,7 +4,10 @@ class Ability
   def initialize(user)
     user ||= User.new
 
-    can :manage, Product, user_id: user.id
-    can :read, Product
+    if user.connected?
+    	can :manage, Product, user_id: user.id
+    else
+    	can :read, Product
+    end
   end
 end

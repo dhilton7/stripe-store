@@ -6,5 +6,9 @@ class User < ActiveRecord::Base
          :omniauthable
 
   has_many :products
+
+  def connected?
+  	publishable_key.present? && provider.present? && uid.present? && access_code.present?
+  end
   
 end
