@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
 			currency: 		'usd',
 			source: 		token,
 			application_fee: (amount * Order::APP_FEE).to_i,
-			destination: User.last.uid 	
+			destination: product.user.uid 	
 		})
 
 		new_params = order_params.merge({
@@ -26,6 +26,9 @@ class OrdersController < ApplicationController
 			email: params[:stripeEmail] 
 		})
 		order = Order.create new_params
+
+		OrderMailer.confirmation_email(params[:stripeEmail], order, product).deliver_later
+
 		redirect_to order_path(order)
 	
 	rescue Stripe::CardError => e
