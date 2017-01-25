@@ -1,6 +1,10 @@
+/* CONTAINER */
+
 .container {
 	padding-bottom: 40px;
 }
+
+/* PRODUCT VIEWS */
 
 .product-img {
 	margin: 16px;
@@ -9,6 +13,16 @@
 .product-detail {
 	padding-top: 40px;
 }
+
+.single-line-title h1 {
+	display: inline;
+}
+
+.single-line-title .btn {
+	float: right;
+}
+
+/* ORDER VIEWS */
 
 .order-detail {
 	width: 65%;
@@ -19,3 +33,4 @@
 	font-size: 2em;
 	padding-bottom: 20px;
 }
+
