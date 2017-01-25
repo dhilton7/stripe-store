@@ -1,8 +1,6 @@
 class WelcomeController < ApplicationController
 
-	def index
-		if current_user.present?
-			render :dashboard
-		end
+	def dashboard
+		redirect_to root_path if current_user.nil?
 	end
 end
