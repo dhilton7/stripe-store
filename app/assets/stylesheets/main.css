@@ -22,6 +22,10 @@
 	float: right;
 }
 
+.pagination {
+	padding-top: 15px;
+}
+
 /* ORDER VIEWS */
 
 .order-detail {
