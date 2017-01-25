@@ -80,4 +80,7 @@ Rails.application.configure do
   # Define secret tokens
   config.secret_key_base = ENV["secret_key_base"]
   config.secret_token = ENV["secret_token"]
+
+  # Configure mailer
+  config.action_mailer.default_url_options = { :host => 'strip-store.herokuapp.com' }
 end
