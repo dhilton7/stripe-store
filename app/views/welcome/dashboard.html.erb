@@ -1,3 +1,20 @@
-<h1>Welcome to your Dashboard</h1>
+<div class="row">
+	<div class="col-lg-12">
+		<div class="page-header">
+			<h1>Welcome, <%= current_user.email %></h1>
+		</div>
+	</div>
+</div>
 
-<%= link_to image_tag('blue-on-light'), user_stripe_connect_omniauth_authorize_path %>
+<% if !current_user.connected? %>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="not-connected">
+				<p>You haven't connected your account to Stripe yet. Please connect your account by clicking the button below so that you can start to receive your payments.</p>
+				<%= link_to image_tag('blue-on-light'), user_stripe_connect_omniauth_authorize_path %>
+			</div>
+		</div>
+	</div>
+<% else %>
+	<%= render 'connected_user' %>
+<% end %>
