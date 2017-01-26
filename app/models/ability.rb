@@ -6,8 +6,7 @@ class Ability
 
     if user.connected?
     	can :manage, Product, user_id: user.id
-    else
-    	can :read, Product
     end
+    can :read, Product
   end
 end
